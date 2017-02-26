@@ -12,13 +12,16 @@ define(['jquery','template','cookie'],function( $ ,template){
 	}
 
 	if( !$.cookie('PHPSESSID') && location.pathname !== '/login'){
-		console.log(1)
+		// console.log(1)
 		location.href = '/login';
 	}
 
 	var userinfo =  JSON.parse( $.cookie('userinfo') || '{}' );
-	console.log(userinfo)
+	// console.log(userinfo)
 
+
+	//
+	//
 	// $('.profile img').attr('src', userinfo.tc_avatar);
 
 	// $('.profile h4').text(userinfo.tc_name);

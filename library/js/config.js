@@ -8,10 +8,14 @@ require.config({
 		nprogress: 'assets/nprogress/nprogress',
 		template: 'assets/artTemplate/template',
 		common: 'js/common',
-		add: 'js/teacher/add'
+		add: 'js/teacher/add',
+		utils: 'js/utils'
 	},
 	shim:{
 		bootstrap:{
+			deps:['jquery']
+		},
+		utils:{
 			deps:['jquery']
 		}
 	}

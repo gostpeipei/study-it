@@ -81,11 +81,11 @@
             <li class="active">{{ title }}</li>
         </ol>
         <div class="teacher-add">
-            <form action="" class="form-horizontal col-md-offset-2">
+            <form action="" class="form-horizontal col-md-offset-2" id="teateacher_add">
                 <div class="form-group">
                     <label for="" class="col-md-3 control-label">姓名</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control input-sm" value="{{tc_name}}">
+                        <input type="text" class="form-control input-sm" value="{{tc_name}}" name="tc_name">
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                 <div class="form-group">
                     <label for="" class="col-md-3 control-label">密码</label>
                     <div class="col-md-4">
-                        <input type="password" class="form-control input-sm">
+                        <input type="password" class="form-control input-sm" name="tc_pass">
                     </div>
                 </div>
                 {{ /if }}
@@ -101,15 +101,15 @@
                 <div class="form-group">
                     <label for="" class="col-md-3 control-label">入职时间</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control input-sm" value="{{tc_join_date}}">
+                        <input type="text" class="form-control input-sm" value="{{tc_join_date}}" name="tc_join_date">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-md-3 control-label">类型</label>
                     <div class="col-md-2">
-                        <select name="" class="form-control input-sm">
-                            <option value="1" {{ if tc_type ==='1'}}selected{{/if}}>讲师</option>
-                            <option value="0" {{ if tc_type ==='0'}}selected{{/if}}>管理员</option>
+                        <select name="tc_type" class="form-control input-sm">
+                            <option value="1" {{ if tc_type ==='1'}}selected{{/if}} >讲师</option>
+                            <option value="0" {{ if tc_type ==='0'}}selected{{/if}} >管理员</option>
                         </select>
                     </div>
                 </div>
@@ -117,16 +117,16 @@
                     <label for="" class="col-md-3 control-label">性别</label>
                     <div class="col-md-4">
                         <label class="radio-inline">
-                            <input type="radio" {{ if tc_gender === '0'}}checked {{ /if }}> 男
+                            <input type="radio" value="0" {{ if tc_gender === '0'}}checked{{ /if }} name="tc_gender"> 男
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" {{ if tc_gender === '1'}}checked {{ /if }}> 女
+                            <input type="radio" value="1" {{ if tc_gender === '1'}}checked{{ /if }} name="tc_gender"> 女
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-7">
-                        <a href="./advert_list.html" class="btn btn-success btn-sm pull-right">{{btnTxt}}</a>
+                        <a href="/teacher/list" class="btn btn-success btn-sm pull-right" id="teateacher_add_btn">{{btnTxt}}</a>
                     </div>                          
                 </div>
             </form>

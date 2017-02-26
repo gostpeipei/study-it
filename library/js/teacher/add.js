@@ -1,5 +1,7 @@
 'use strict';
-define(['jquery','template'],function( $ , template){
+define(['jquery','template','utils'],function( $ , template, utils){
+
+	utils.setMenuClass('/teacher/list');
 	// console.log(location);
 	function getParam(name) {
 	   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
@@ -8,6 +10,7 @@ define(['jquery','template'],function( $ , template){
 	}
 	//判断是否有ID;
 	var id = getParam('tc_id');
+
 
 	// 有id就是编辑
 	if( id ){
@@ -26,10 +29,23 @@ define(['jquery','template'],function( $ , template){
 			}
 		})
 	}else{
+	//没有id是添加
 		var html = template('teacher_edit_tpl',{
 			title: '讲师添加',
 			btnTxt: '添 加'
 		})
 		$('#teacher_edit').html(html);
 	}
+
+	$('#teateacher_add_btn').on('click',function(){
+		var formDate = $('#teateacher_add').serialize();
+		$.ajax({
+			url: '/api/teacher/add',
+			data:formDate,
+			type:'post',
+			success:function(data){
+				console.log(data)
+			}
+		})
+	})
 })

@@ -1,5 +1,8 @@
 'use strict';
-define(['jquery','template','bootstrap'],function( $, template ){
+define(['jquery','template','utils','bootstrap'],function( $, template ,utils){
+
+	utils.setMenuClass('/teacher/list');
+
 	var $teacherList = $('#teacher_list');
 	$.ajax({
 		url: '/api/teacher',
