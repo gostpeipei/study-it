@@ -16,7 +16,7 @@ define(['jquery','template','cookie'],function( $ ,template){
 		location.href = '/login';
 	}
 
-	var userinfo =  JSON.parse($.cookie('userinfo'));
+	var userinfo =  JSON.parse( $.cookie('userinfo') || '{}' );
 	console.log(userinfo)
 
 	// $('.profile img').attr('src', userinfo.tc_avatar);
