@@ -1,6 +1,7 @@
 'use strict';
-define(['jquery','validate','form'],function( $ ){
+define(['jquery','utils','validate','form'],function( $,utils ){
 
+	utils.setMenuClass('/course/course_add')
 	$('#course_create').validate({
 		onKeyup: true,
 		onBlur: true,

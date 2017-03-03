@@ -68,7 +68,7 @@ define(['jquery','template','ckeditor','validate','cookie','uploadify','datelang
 
 					// 存cookie
 					var userinfo = JSON.parse($.cookie('userinfo'));
-					userinfo.tc_avatar = ret.result.path;
+						userinfo.tc_avatar = ret.result.path;
 					$.cookie('userinfo',JSON.stringify(userinfo))
 				}
 			})
@@ -77,7 +77,7 @@ define(['jquery','template','ckeditor','validate','cookie','uploadify','datelang
 			CKEDITOR.replace('tc_introduce');
 		}
 	})
-	
+
 
 
 })
